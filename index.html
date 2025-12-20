@@ -1,37 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Click Download</title>
+    <title>Modern Download Button</title>
     <style>
-        /* ခလုတ်ကို ပုံစံဖော်ခြင်း */
-        .download-btn {
-            background-color: #007bff; /* အပြာရောင် */
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Mouse တင်လိုက်ရင် အရောင်ပြောင်းရန် */
-        .download-btn:hover {
-            background-color: #0056b3;
+        .download-container {
+            text-align: center;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            /* လှပတဲ့ Gradient အရောင် */
+            background: linear-gradient(45deg, #007bff, #00d4ff);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Mouse တင်လိုက်တဲ့အခါ (Hover Effect) */
+        .btn-download:hover {
+            transform: translateY(-3px); /* အပေါ်ကို အနည်းငယ် ကြွတက်လာမည် */
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+            background: linear-gradient(45deg, #0069d9, #00bfff);
+        }
+
+        /* နှိပ်လိုက်တဲ့အခါ (Active Effect) */
+        .btn-download:active {
+            transform: translateY(1px);
+        }
+
+        /* Icon အတွက် (Optional) */
+        .btn-download span {
+            margin-right: 10px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h2>One Click Download Button</h2>
-    
-    <a href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk" download="filename" class="download-btn">
-        Download Now
-    </a>
+    <div class="download-container">
+        <a href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk" download class="btn-download">
+            <span>⬇</span> One Click Download
+        </a>
+        <p style="margin-top: 15px; color: #666; font-size: 14px;">Fast & Secure Download</p>
+    </div>
 
 </body>
 </html>
+
