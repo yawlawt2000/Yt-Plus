@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>YT Plus VPN</title>
+<title>YT Plus VPN - Christmas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -14,37 +14,48 @@
 body{
   margin:0;
   min-height:100vh;
-  background:linear-gradient(135deg,#3b2b7a,#1b0f3a);
+  background:linear-gradient(135deg,#7a1f1f,#1b0f0f);
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+}
+
+/* Canvas */
+#effects{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
 }
 
 /* Card */
 .card{
   width:360px;
   max-width:90%;
-  background:#0c0c0f;
-  border-radius:22px;
+  background:rgba(15,10,10,0.95);
+  border-radius:24px;
   padding:40px 25px;
   text-align:center;
   color:#fff;
-  box-shadow:0 0 40px rgba(0,0,0,0.7);
+  box-shadow:0 0 40px rgba(255,0,0,0.35);
   animation:fadeIn 1.2s ease;
+  position:relative;
+  z-index:2;
 }
 
-/* Logo Glow */
+/* Logo */
 .logo-wrapper{
   width:130px;
   height:130px;
   margin:0 auto 25px;
   border-radius:50%;
-  border:3px solid #666;
+  border:3px solid #b71c1c;
   display:flex;
   align-items:center;
   justify-content:center;
+  animation:christmasGlow 3s infinite;
   position:relative;
-  animation:pulseGlow 2.5s infinite;
 }
 
 .logo-wrapper::after{
@@ -53,36 +64,27 @@ body{
   width:105px;
   height:105px;
   border-radius:50%;
-  border:2px solid red;
-  box-shadow:0 0 15px red,0 0 30px red;
+  border:2px solid gold;
+  box-shadow:0 0 15px gold,0 0 35px gold;
 }
 
-/* Image Logo */
 .logo-wrapper img{
   width:70px;
-  height:70px;
-  object-fit:contain;
-  z-index:1;
-  filter:drop-shadow(0 0 10px #4fc3ff)
-         drop-shadow(0 0 25px #4fc3ff);
+  filter:drop-shadow(0 0 12px gold);
 }
 
-/* Text */
 h1{
   margin:25px 0 10px;
   font-size:32px;
-  letter-spacing:1px;
-  text-shadow:0 0 8px rgba(255,255,255,0.2);
+  color:#ffe082;
 }
 
 p{
   margin:0 0 35px;
   font-size:16px;
-  line-height:1.6;
-  color:#cfcfcf;
 }
 
-/* Button Glow */
+/* Button */
 .download-btn{
   display:inline-flex;
   align-items:center;
@@ -95,72 +97,125 @@ p{
   color:#fff;
   font-size:18px;
   font-weight:600;
-  background:linear-gradient(90deg,#3cb878,#2da0ff);
-  box-shadow:0 0 15px rgba(45,160,255,0.6);
+  background:linear-gradient(90deg,#c62828,#2e7d32);
+  box-shadow:0 0 20px rgba(255,215,0,0.6);
   animation:buttonGlow 2s infinite alternate;
-  transition:transform .2s;
 }
 
-.download-btn:hover{
-  transform:scale(1.05);
-}
-
-.download-btn span{
-  font-size:22px;
-}
-
-/* Animations */
-@keyframes pulseGlow{
-  0%{
-    box-shadow:0 0 10px #4fc3ff,0 0 25px #4fc3ff;
-  }
-  50%{
-    box-shadow:0 0 25px #4fc3ff,0 0 50px #4fc3ff;
-  }
-  100%{
-    box-shadow:0 0 10px #4fc3ff,0 0 25px #4fc3ff;
-  }
+@keyframes christmasGlow{
+  0%{box-shadow:0 0 15px red,0 0 30px gold;}
+  50%{box-shadow:0 0 35px red,0 0 60px gold;}
+  100%{box-shadow:0 0 15px red,0 0 30px gold;}
 }
 
 @keyframes buttonGlow{
-  from{
-    box-shadow:0 0 10px #2da0ff,0 0 20px #3cb878;
-  }
-  to{
-    box-shadow:0 0 25px #2da0ff,0 0 45px #3cb878;
-  }
+  from{box-shadow:0 0 15px red;}
+  to{box-shadow:0 0 35px gold;}
 }
 
 @keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
+<canvas id="effects"></canvas>
+
 <div class="card">
-
-  <!-- Logo Image -->
   <div class="logo-wrapper">
-    <img src="https://raw.githubusercontent.com/yawlawt/YTPlusVip/main/images/icon.png" alt="JVPN Logo">
+    <img src="https://raw.githubusercontent.com/yawlawt/YTPlusVip/main/images/icon.png">
   </div>
-
-  <h1>YT Plus VPN</h1>
-  <p>Premium VPN Services for Secure Browsing</p>
-
-  <a href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk" class="download-btn">
-    <span>⬇</span> Download YT Plus APK
-  </a>
-
+  <h1>🎄 YT Plus VPN</h1>
+  <p>Christmas Special • Secure & Fast Browsing</p>
+  <a href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk" class="download-btn">🎁 Download YT Plus APK</a>
 </div>
+
+<script>
+const canvas = document.getElementById("effects");
+const ctx = canvas.getContext("2d");
+let w = canvas.width = window.innerWidth;
+let h = canvas.height = window.innerHeight;
+
+/* Snow */
+let snow=[];
+for(let i=0;i<140;i++){
+  snow.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*3+1,d:Math.random()*1.5+0.5});
+}
+
+/* Sparkles */
+let sparkles=[];
+for(let i=0;i<50;i++){
+  sparkles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,a:Math.random()});
+}
+
+/* Christmas Tree Lights */
+let treeLights=[];
+const colors=["#ff5252","#ffd740","#69f0ae","#40c4ff"];
+const baseX=w/2;
+const baseY=h-120;
+
+for(let i=0;i<100;i++){
+  treeLights.push({
+    x: baseX + (Math.random()*160-80)*(i/100),
+    y: baseY - i*4,
+    r: Math.random()*2+1.5,
+    c: colors[Math.floor(Math.random()*colors.length)],
+    a: Math.random()
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+
+  /* Snow */
+  ctx.fillStyle="rgba(255,255,255,0.85)";
+  ctx.beginPath();
+  snow.forEach(s=>{
+    ctx.moveTo(s.x,s.y);
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    s.y+=s.d;
+    if(s.y>h){s.y=0;s.x=Math.random()*w;}
+  });
+  ctx.fill();
+
+  /* Sparkles */
+  sparkles.forEach(sp=>{
+    ctx.fillStyle=`rgba(255,215,0,${sp.a})`;
+    ctx.beginPath();
+    ctx.arc(sp.x,sp.y,sp.r,0,Math.PI*2);
+    ctx.fill();
+    sp.a+=(Math.random()-0.5)*0.05;
+    sp.a=Math.max(0,Math.min(1,sp.a));
+  });
+
+  /* Tree Lights */
+  treeLights.forEach(l=>{
+    ctx.beginPath();
+    ctx.fillStyle=l.c;
+    ctx.shadowColor=l.c;
+    ctx.shadowBlur=15;
+    ctx.globalAlpha=l.a;
+    ctx.arc(l.x,l.y,l.r,0,Math.PI*2);
+    ctx.fill();
+    l.a+=(Math.random()-0.5)*0.2;
+    if(l.a<0.3)l.a=0.3;
+    if(l.a>1)l.a=1;
+  });
+  ctx.globalAlpha=1;
+  ctx.shadowBlur=0;
+
+  requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener("resize",()=>{
+  w=canvas.width=window.innerWidth;
+  h=canvas.height=window.innerHeight;
+});
+</script>
 
 </body>
 </html>
