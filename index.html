@@ -12,7 +12,6 @@
   --card-bg:rgba(20,10,10,0.92);
   --text:#ffffff;
   --accent:#ffe082;
-  --messenger:#0084ff;
 }
 
 body{
@@ -47,7 +46,7 @@ canvas{
   margin:90px 0 40px;
 }
 
-/* LOGO TOP + ANIMATION */
+/* Logo */
 .logo{
   width:110px;
   height:110px;
@@ -60,35 +59,22 @@ canvas{
   box-shadow:0 0 25px gold;
   animation: glow 2.5s infinite alternate, spin 12s linear infinite;
 }
+.logo img{width:60px;}
 
-.logo img{
-  width:60px;
-}
-
-/* Glow animation */
 @keyframes glow{
-  from{
-    box-shadow:0 0 15px gold,0 0 25px rgba(255,215,0,.6);
-  }
-  to{
-    box-shadow:0 0 30px gold,0 0 60px rgba(255,215,0,1);
-  }
+  from{box-shadow:0 0 15px gold;}
+  to{box-shadow:0 0 35px gold;}
 }
-
-/* Slow rotate */
 @keyframes spin{
   from{transform:rotate(0deg);}
   to{transform:rotate(360deg);}
 }
 
-/* Title */
 .app-title{
   font-size:30px;
   font-weight:700;
   color:var(--accent);
-  margin:10px 0 6px;
 }
-
 .subtitle{
   font-size:14px;
   opacity:.9;
@@ -106,14 +92,8 @@ canvas{
   margin:10px 0;
   text-decoration:none;
 }
-
-.download{
-  background:linear-gradient(90deg,#c62828,#2e7d32);
-}
-
-.messenger{
-  background:linear-gradient(90deg,#0084ff,#00c6ff);
-}
+.download{background:linear-gradient(90deg,#c62828,#2e7d32);}
+.messenger{background:linear-gradient(90deg,#0084ff,#00c6ff);}
 
 /* Time */
 .time-box{
@@ -122,17 +102,8 @@ canvas{
   border-radius:18px;
   background:rgba(255,255,255,0.08);
 }
-
-#time{
-  font-size:24px;
-  font-weight:bold;
-  color:var(--accent);
-}
-
-#date{
-  font-size:13px;
-  opacity:.85;
-}
+#time{font-size:24px;font-weight:bold;color:var(--accent);}
+#date{font-size:13px;opacity:.85;}
 
 /* Packages */
 .packages{margin:20px 0;text-align:left;}
@@ -141,15 +112,38 @@ canvas{
 .package{
   background:rgba(255,255,255,0.08);
   border-radius:16px;
-  padding:12px;
-  margin-bottom:10px;
+  padding:14px;
+  margin-bottom:12px;
+}
+
+.pkg-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
-.pkg-info{font-size:13px;}
+.pkg-info{font-size:14px;}
 .pkg-info strong{color:var(--accent);}
+
+.buy-btn{
+  display:block;
+  margin-top:12px;
+  text-align:center;
+  padding:12px;
+  border-radius:24px;
+  font-weight:700;
+  color:#fff;
+  text-decoration:none;
+  background:linear-gradient(90deg,#ff9800,#f44336);
+  box-shadow:0 0 15px rgba(255,152,0,.8);
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 10px rgba(255,152,0,.6);}
+  50%{box-shadow:0 0 25px rgba(255,152,0,1);}
+  100%{box-shadow:0 0 10px rgba(255,152,0,.6);}
+}
 
 .call-btn{
   background:#4caf50;
@@ -162,7 +156,6 @@ canvas{
 /* Video */
 .video-section{margin:25px 0;}
 .video-section h2{text-align:center;color:var(--accent);}
-
 .video-box{
   position:relative;
   width:100%;
@@ -170,7 +163,6 @@ canvas{
   border-radius:18px;
   overflow:hidden;
 }
-
 .video-box iframe{
   position:absolute;
   inset:0;
@@ -186,7 +178,6 @@ canvas{
 
 <div class="card">
 
-  <!-- ✅ LOGO AT VERY TOP WITH ANIMATION -->
   <div class="logo">
     <img src="https://raw.githubusercontent.com/yawlawt/YTPlusVip/main/images/icon.png">
   </div>
@@ -207,23 +198,45 @@ canvas{
     <div id="date"></div>
   </div>
 
+  <!-- PACKAGE SECTION -->
   <div class="packages">
     <h2>📦 Package Section</h2>
 
+    <!-- VIP PACKAGE -->
     <div class="package">
-      <div class="pkg-info"><strong>Dtac Jaidee BackUp Net</strong><br>*117*30# • 30 ဘတ်</div>
-      <a class="call-btn" href="tel:*117*30%23">📞</a>
+      <div class="pkg-top">
+        <div class="pkg-info">
+          <strong>YT Plus VPN – 1 Month</strong><br>
+          Unlimited Speed • Unlimited Data
+        </div>
+        <div><strong style="color:#4caf50">50 ဘတ်</strong></div>
+      </div>
+      <a class="buy-btn" href="https://m.me/yawlawt2431" target="_blank">
+        ✅ Buy Now
+      </a>
     </div>
 
     <div class="package">
-      <div class="pkg-info"><strong>AIS 64Kbps</strong><br>*777*7067# • 34 ဘတ်</div>
-      <a class="call-btn" href="tel:*777*7067%23">📞</a>
+      <div class="pkg-top">
+        <div class="pkg-info"><strong>Dtac Jaidee BackUp Net</strong><br>*117*30#</div>
+        <a class="call-btn" href="tel:*117*30%23">📞</a>
+      </div>
     </div>
 
     <div class="package">
-      <div class="pkg-info"><strong>True VDO</strong><br>*900*8234# • 85 ဘတ်</div>
-      <a class="call-btn" href="tel:*900*8234%23">📞</a>
+      <div class="pkg-top">
+        <div class="pkg-info"><strong>AIS 64Kbps</strong><br>*777*7067#</div>
+        <a class="call-btn" href="tel:*777*7067%23">📞</a>
+      </div>
     </div>
+
+    <div class="package">
+      <div class="pkg-top">
+        <div class="pkg-info"><strong>True VDO</strong><br>*900*8234#</div>
+        <a class="call-btn" href="tel:*900*8234%23">📞</a>
+      </div>
+    </div>
+
   </div>
 
   <div class="video-section">
