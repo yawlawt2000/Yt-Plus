@@ -12,6 +12,7 @@
   --card-bg:rgba(20,10,10,0.92);
   --text:#ffffff;
   --accent:#ffe082;
+  --messenger:#0084ff;
 }
 
 body.light{
@@ -20,6 +21,7 @@ body.light{
   --card-bg:rgba(255,255,255,0.95);
   --text:#111;
   --accent:#c62828;
+  --messenger:#006eff;
 }
 
 *{
@@ -126,7 +128,8 @@ p{
   opacity:.85;
 }
 
-a{
+/* Buttons */
+.btn{
   display:block;
   text-decoration:none;
   padding:16px;
@@ -134,9 +137,26 @@ a{
   font-size:18px;
   font-weight:600;
   color:#fff;
-  background:linear-gradient(90deg,#c62828,#2e7d32);
+  margin-bottom:14px;
   box-shadow:0 0 25px rgba(255,215,0,.6);
   animation:pulse 2s infinite;
+}
+
+.download{
+  background:linear-gradient(90deg,#c62828,#2e7d32);
+}
+
+/* Messenger Button */
+.messenger{
+  background:linear-gradient(90deg,var(--messenger),#00c6ff);
+  box-shadow:0 0 25px rgba(0,132,255,.8);
+}
+
+.messenger span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
 }
 
 @keyframes pulse{
@@ -169,26 +189,28 @@ a{
   <h1>🎄 YT Plus VPN</h1>
   <p>Christmas Special • Secure & Fast Browsing</p>
 
-  <!-- Live Time -->
   <div class="time-box">
     <div id="time">00:00:00 AM</div>
     <div id="date">Loading...</div>
   </div>
 
-  <a href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk">
+  <a class="btn download" href="https://github.com/yawlawt/YT-Plus-Apk/releases/download/V1.0.1/YT_PLUS_VPNcom.yt.plusv2.0.apk">
     🎁 Download YT Plus APK
+  </a>
+
+  <!-- Messenger Link -->
+  <a class="btn messenger" href="https://m.me/yawlawt2431" target="_blank">
+    <span>💬 Contact on Messenger</span>
   </a>
 </div>
 
 <script>
-/* Dark Light Toggle */
 function toggleMode(){
   document.body.classList.toggle("light");
   document.querySelector(".toggle").textContent =
     document.body.classList.contains("light") ? "☀️" : "🌙";
 }
 
-/* 12 Hour Time with AM / PM */
 function updateTime(){
   const now = new Date();
   const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
